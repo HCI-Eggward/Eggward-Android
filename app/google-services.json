@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "331194592898",
+    "project_id": "eggward-e2a9e",
+    "storage_bucket": "eggward-e2a9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331194592898:android:a5e173f8c04ee554d1ce9b",
+        "android_client_info": {
+          "package_name": "com.example.eggward"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331194592898-ogen6mkhf76mi657e1r87633ib75rcqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eggward",
+            "certificate_hash": "c1a351f3fb3f4565c3b77a54b382db5a9fb0826d"
+          }
+        },
+        {
+          "client_id": "331194592898-ip9j0phl328tui80qjentoq59obbi2hs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC6YCQxju9YBOY3wQUMFcvF7BPdmFtHVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331194592898-ip9j0phl328tui80qjentoq59obbi2hs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
