@@ -69,7 +69,7 @@ public class MyPetListActivity extends AppCompatActivity {
                 adapter.addItem();
                 gridView.setAdapter(adapter);
             }
-        },3000);
+        },1500);
 
        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
            @Override
