@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2205" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/button.xml" value="0.141" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/egg_textbox_gray.xml" value="0.2355" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/egg_textbox_yellow.xml" value="0.2355" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/ic_baseline_west_24.xml" value="0.1125" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2205" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/login_button.xml" value="0.1225" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/menu_item_color.xml" value="0.1" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/progress_bar.xml" value="0.2355" />
@@ -25,6 +27,7 @@
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_schedule.xml" value="0.264" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/alert_dialog_todo.xml" value="0.3182291666666667" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/expandable_list_child.xml" value="0.42617753623188404" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/expandable_list_child_backlog.xml" value="0.536" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/expandable_list_parent.xml" value="0.42617753623188404" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/mypet_list_item.xml" value="0.1933876811594203" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11145833333333334" />

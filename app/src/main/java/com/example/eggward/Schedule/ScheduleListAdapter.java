@@ -15,11 +15,16 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.example.eggward.R;
 import com.example.eggward.Schedule.domain.ChildItem;
 import com.example.eggward.Schedule.domain.ParentItem;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,6 +36,9 @@ public class ScheduleListAdapter extends BaseExpandableListAdapter {
 
     View view;
     Context context;
+
+    public static FirebaseFirestore database = FirebaseFirestore.getInstance();
+    String userEmail = "eggward@ewhain.net";
 
     ImageButton rewardImage;
 
@@ -116,6 +124,13 @@ public class ScheduleListAdapter extends BaseExpandableListAdapter {
                                 // do nothing
                             }).show();
                 }
+
+                database.collection("User").document(userEmail).collection("eggBreed").document("eggBreed")
+                        .update("curExp", FieldValue.increment(30));
+
+                database.collection("User").document(userEmail).collection("itemList").document("itemList")
+                        .update("ball", FieldValue.increment(1), "clothes", FieldValue.increment(1), "food", FieldValue.increment(1));
+
             }
         });
 

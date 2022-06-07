@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
 
+import com.example.eggward.Backlogs.domain.BacklogChildItem;
 import com.example.eggward.EggBreeding.EggBreedActivity;
 import com.example.eggward.MyPets.MyPetListActivity;
 import com.example.eggward.R;
@@ -27,6 +28,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BacklogActivity extends AppCompatActivity {
     FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -44,8 +46,8 @@ public class BacklogActivity extends AppCompatActivity {
     ExpandableListView listView;
     BacklogListAdapter listAdapter;
     ArrayList<ParentItem> groupList = new ArrayList<>();
-    ArrayList<ArrayList<ChildItem>> childList = new ArrayList<>();
-    ArrayList<ArrayList<ChildItem>> categoriesList = new ArrayList<>();
+    ArrayList<ArrayList<BacklogChildItem>> childList = new ArrayList<>();
+    ArrayList<ArrayList<BacklogChildItem>> categoriesList = new ArrayList<>();
 
     BottomNavigationView navigationView;
 
@@ -117,7 +119,7 @@ public class BacklogActivity extends AppCompatActivity {
                     }
 
                     for (int i=0; i<categoryList.size(); i++) {
-                        categoriesList.add(new ArrayList<ChildItem>());
+                        categoriesList.add(new ArrayList<BacklogChildItem>());
                     }
 
                 }
@@ -134,10 +136,13 @@ public class BacklogActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        ArrayList tmpList = (ArrayList) document.get("backlog");
+                        ArrayList<HashMap<String, String>> tmpList = (ArrayList) document.get("backlog");
                         if (tmpList != null) {
                             for (int i = 0; i < tmpList.size(); i++) {
-                                ChildItem item = new ChildItem((String) tmpList.get(i));
+                                HashMap<String, String> tmpMap = tmpList.get(i);
+                                String todoName = tmpMap.get("name");
+                                String todoDate = tmpMap.get("date");
+                                BacklogChildItem item = new BacklogChildItem(todoName, todoDate);
                                 categoriesList.get(categoryIndex).add(item);
                             }
                             categoryIndex++;
