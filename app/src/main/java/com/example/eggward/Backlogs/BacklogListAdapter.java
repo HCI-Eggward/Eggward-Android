@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.eggward.Backlogs.domain.BacklogChildItem;
 import com.example.eggward.R;
 import com.example.eggward.Schedule.domain.ChildItem;
 import com.example.eggward.Schedule.domain.ParentItem;
@@ -37,7 +39,7 @@ public class BacklogListAdapter extends BaseExpandableListAdapter {
     ArrayList<String> todoContentList;
 
     ArrayList<ParentItem> parentItems;
-    ArrayList<ArrayList<ChildItem>> childItems;
+    ArrayList<ArrayList<BacklogChildItem>> childItems;
 
     View view;
     Context context;
@@ -62,7 +64,7 @@ public class BacklogListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public ChildItem getChild(int groupPosition, int childPosition) {
+    public BacklogChildItem getChild(int groupPosition, int childPosition) {
         return childItems.get(groupPosition).get(childPosition);
     }
 
@@ -104,11 +106,13 @@ public class BacklogListAdapter extends BaseExpandableListAdapter {
 
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.expandable_list_child, parent, false);
+            view = inflater.inflate(R.layout.expandable_list_child_backlog, parent, false);
         }
 
         CheckBox todoContent = view.findViewById(R.id.todoCheckBox);
+        Button dateContent = view.findViewById(R.id.dateBtn);
         todoContent.setText(getChild(groupPosition, childPosition).getTodoContent());
+        dateContent.setText(getChild(groupPosition, childPosition).getDateContent());
         todoContent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -139,7 +143,7 @@ public class BacklogListAdapter extends BaseExpandableListAdapter {
         return true;
     }
 
-    public void addItem(int groupPosition, ChildItem item) {
+    public void addItem(int groupPosition, BacklogChildItem item) {
         childItems.get(groupPosition).add(item);
     }
 
