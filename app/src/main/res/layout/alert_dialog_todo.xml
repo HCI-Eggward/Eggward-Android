@@ -13,7 +13,7 @@
         <EditText
             android:id="@+id/inputTodo"
             android:layout_width="240dp"
-            android:layout_height="10dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_weight="1"
             android:ems="10"
@@ -22,7 +22,7 @@
         <Spinner
             android:id="@+id/categorySpinner"
             android:layout_width="240dp"
-            android:layout_height="10dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_weight="1" />
     </LinearLayout>
