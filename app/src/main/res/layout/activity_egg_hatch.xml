@@ -17,7 +17,7 @@
         android:id="@+id/egg_textbox"
         android:layout_width="357dp"
         android:layout_height="81dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="116dp"
         android:background="@drawable/egg_textbox_yellow"
         android:gravity="center"
         android:text="날 터치하면 좋은 일이 생길 것 같아!"
@@ -31,25 +31,11 @@
         android:id="@+id/egg_imageView"
         android:layout_width="335dp"
         android:layout_height="365dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/egg_textbox"
         app:srcCompat="@drawable/egg_hatch" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:itemIconTint="@drawable/nav_menu_selector"
-        app:itemTextColor="@drawable/nav_menu_selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

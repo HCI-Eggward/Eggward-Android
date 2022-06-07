@@ -11,7 +11,4 @@
         android:bottomLeftRadius="2dp"
         android:bottomRightRadius="2dp"/>
     <!-- 선 크기 및 색 지정 -->
-    <stroke
-        android:width="5dp"
-        android:color="#B2DFDB" />
 </shape>
