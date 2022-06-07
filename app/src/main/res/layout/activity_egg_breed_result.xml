@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EggBreeding.EggBreedResultActivity">
+
+    <TextView
+        android:id="@+id/eggBox"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/white_rounded_box"
+        android:clickable="false"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/eggName"
+        android:layout_width="410dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/white_title_box"
+        android:gravity="center"
+        android:text="펫 이름"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/egg_textbox"
+        android:layout_width="357dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/egg_textbox_yellow"
+        android:gravity="center"
+        android:text="네가 날 깨워준거야?\n만나서 반가워!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eggBox" />
+
+    <ImageView
+        android:id="@+id/egg_imageView"
+        android:layout_width="241dp"
+        android:layout_height="226dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/egg_textbox"
+        app:srcCompat="@drawable/pet_choala" />
+
+    <TextView
+        android:id="@+id/egg_petMsg"
+        android:layout_width="357dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="360dp"
+        android:gravity="center"
+        android:text="축하합니다!\n [펫 이름](이)가 부화했습니다!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eggBox" />
+
+    <Button
+        android:id="@+id/egg_confirmbutton"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFF2AD"
+        android:gravity="center"
+        android:text="확인"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/egg_petMsg" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@drawable/nav_menu_selector"
+        app:itemTextColor="@drawable/nav_menu_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
