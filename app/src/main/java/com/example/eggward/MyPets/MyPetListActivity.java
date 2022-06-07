@@ -36,6 +36,7 @@ public class MyPetListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_pet_list);
 
         navigationView = findViewById(R.id.navigationView);
+        navigationView.setSelectedItemId(R.id.navigation_mypet);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

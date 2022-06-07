@@ -69,6 +69,7 @@ public class EggBreedActivity extends AppCompatActivity {
         eggAgeTextView = findViewById(R.id.egg_age_val);
 
         navigationView = findViewById(R.id.navigationView);
+        navigationView.setSelectedItemId(R.id.navigation_egg);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
