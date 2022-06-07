@@ -1,14 +1,11 @@
 package com.example.eggward.MyPets;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,8 +15,6 @@ import com.example.eggward.Backlogs.BacklogActivity;
 import com.example.eggward.EggBreeding.EggBreedActivity;
 import com.example.eggward.R;
 import com.example.eggward.Schedule.ScheduleActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
