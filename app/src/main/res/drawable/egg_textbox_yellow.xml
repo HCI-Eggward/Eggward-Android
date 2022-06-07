@@ -3,12 +3,18 @@
     android:padding="10dp"
     android:shape="rectangle">
     <!-- 배경 색 설정 -->
-    <solid android:color="#00E083" />
+    <solid android:color="#FFF2AD" />
     <!-- 모서리 곡선 설정 -->
     <corners
-        android:topLeftRadius="2dp"
-        android:topRightRadius="2dp"
-        android:bottomLeftRadius="2dp"
-        android:bottomRightRadius="2dp"/>
+        android:topLeftRadius="15dp"
+        android:topRightRadius="15dp"
+        android:bottomLeftRadius="15dp"
+        android:bottomRightRadius="15dp"/>
     <!-- 선 크기 및 색 지정 -->
+    <stroke
+        android:width="0dp"
+        android:color="#FFF2AD" />
 </shape>
+
+
+

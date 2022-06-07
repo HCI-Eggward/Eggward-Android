@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import com.example.eggward.Backlogs.BacklogActivity;
 import com.example.eggward.EggBreeding.EggBreedActivity;
@@ -14,7 +18,10 @@ import com.example.eggward.Schedule.ScheduleActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+
 public class MyPetListActivity extends AppCompatActivity {
+    private GridView gridView;
+    private MyPetListAdapter adapter;
 
     BottomNavigationView navigationView;
 
@@ -24,6 +31,7 @@ public class MyPetListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_pet_list);
 
         navigationView = findViewById(R.id.navigationView);
+        navigationView.setSelectedItemId(R.id.navigation_mypet);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -45,5 +53,28 @@ public class MyPetListActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        gridView = (GridView) findViewById(R.id.mypetListArea);
+
+        adapter = new MyPetListAdapter();
+        adapter.getMypetList();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                adapter.addItem();
+                gridView.setAdapter(adapter);
+            }
+        },1500);
+
+       gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+           @Override
+           public void onItemClick(AdapterView parent, View v, int position, long id){
+               Intent intent = new Intent(getApplicationContext(),MyPetDetailActivity.class);
+               startActivity(intent);
+           }
+       });
     }
+
+
 }

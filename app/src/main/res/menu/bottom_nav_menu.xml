@@ -4,25 +4,21 @@
     <item
         android:id="@+id/navigation_schedule"
         android:icon="@drawable/tab_schedule"
-        android:checked="false"
         android:title="TODO" />
 
     <item
         android:id="@+id/navigation_backlog"
         android:icon="@drawable/tab_backlog"
-        android:checked="false"
         android:title="밀린 일정" />
 
     <item
         android:id="@+id/navigation_egg"
         android:icon="@drawable/tab_egg"
-        android:checked="false"
         android:title="알 확인" />
 
     <item
         android:id="@+id/navigation_mypet"
         android:icon="@drawable/tab_mypet"
-        android:checked="false"
         android:title="펫 확인" />
 
 </menu>

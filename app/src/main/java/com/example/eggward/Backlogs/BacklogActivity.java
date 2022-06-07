@@ -24,6 +24,7 @@ public class BacklogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_backlog);
 
         navigationView = findViewById(R.id.navigationView);
+        navigationView.setSelectedItemId(R.id.navigation_backlog);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

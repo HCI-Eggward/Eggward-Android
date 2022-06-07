@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundDimEnabled="false"
+    android:windowContentOverlay ="@null"
+    android:windowIsTranslucent="true"
+    android:windowBackground="@android:color/transparent"
+    android:windowNoTitle="true"
+    android:background="#aa000000"
+    tools:context=".EggBreeding.EggHatchActivity">
+
+
+    <TextView
+        android:id="@+id/egg_textbox"
+        android:layout_width="357dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/egg_textbox_yellow"
+        android:gravity="center"
+        android:text="날 터치하면 좋은 일이 생길 것 같아!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/egg_imageView"
+        android:layout_width="335dp"
+        android:layout_height="365dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/egg_textbox"
+        app:srcCompat="@drawable/egg_hatch" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
