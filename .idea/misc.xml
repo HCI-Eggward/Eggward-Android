@@ -3,34 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/button.xml" value="0.141" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/egg_textbox_gray.xml" value="0.2355" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/egg_textbox_yellow.xml" value="0.2355" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/ic_baseline_west_24.xml" value="0.1125" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/login_button.xml" value="0.1225" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/menu_item_color.xml" value="0.1" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/progress_bar.xml" value="0.2355" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/white_rounded_box.xml" value="0.2935" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/white_title_box.xml" value="0.2935" />
-        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_backlog.xml" value="0.264" />
-        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_egg_breed.xml" value="0.4" />
-        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_egg_breed_result.xml" value="0.264" />
-        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_egg_hatch.xml" value="0.2359375" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/drawable/yellow_rounded_box.xml" value="0.1995" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_backlog.xml" value="0.176" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_calendar.xml" value="0.264" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_egg_breed.xml" value="0.264" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_egg_breed_result.xml" value="0.2" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_egg_hatch.xml" value="0.18823529411764706" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_my_pet_detail.xml" value="0.11197916666666667" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_my_pet_detail.xml" value="0.2" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_my_pet_list.xml" value="0.264" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_schedule.xml" value="0.264" />
+        <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/mypet_list_item.xml" value="0.1933876811594203" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11145833333333334" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/egg_text_yellow.xml" value="0.2215" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/ic_baseline_backarrow.xml" value="0.106" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.106" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/login_button.xml" value="0.106" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/petitem_count.xml" value="0.2015" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/progress_bar.xml" value="0.2265" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/drawable/white_title_box.xml" value="0.241" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/layout/activity_egg_breed.xml" value="0.22146739130434784" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/layout/activity_my_pet_detail.xml" value="0.536" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/layout/activity_my_pet_list.xml" value="0.176" />
-        <entry key="..\:/Users/mok33/OneDrive/Eggward-Android/app/src/main/res/layout/mypet_list_item.xml" value="0.4" />
       </map>
     </option>
   </component>

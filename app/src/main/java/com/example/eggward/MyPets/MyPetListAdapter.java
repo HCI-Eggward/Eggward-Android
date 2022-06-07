@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.eggward.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -77,28 +78,28 @@ public class MyPetListAdapter extends BaseAdapter {
             Log.v("이름",name);
             switch(name){
                 case "동동이":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_rabbit);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_rabbit, null));
                     break;
                 case "리눅스":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_penguin);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_penguin, null));
                     break;
                 case "스테이시":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_mouse);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_mouse, null));
                     break;
                 case "알렉스":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_bird);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_bird, null));
                     break;
                 case "김자몽":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_choala);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_choala, null));
                     break;
                 case "에그워드":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_panda);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_panda, null));
                     break;
                 case "알알이":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_fish);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_fish, null));
                     break;
                 case "코코":
-                    holder.imageBtn.setBackgroundResource(R.drawable.pet_monkey);
+                    holder.imageBtn.setImageDrawable(ResourcesCompat.getDrawable(parent.getResources(), R.drawable.pet_list_monkey, null));
             }
 
             holder.imageBtn.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +107,7 @@ public class MyPetListAdapter extends BaseAdapter {
                 public void onClick(View v) {
                         Intent intent = new Intent(v.getContext(), MyPetDetailActivity.class);
                         intent.putExtra("name", holder.petName.getText());
+                        intent.putExtra("position", position);
                         ((MyPetListActivity) v.getContext()).startActivity(intent);
                 }
             });
