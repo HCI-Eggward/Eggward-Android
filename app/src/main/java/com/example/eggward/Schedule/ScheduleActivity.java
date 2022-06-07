@@ -24,6 +24,7 @@ public class ScheduleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_schedule);
 
         navigationView = findViewById(R.id.navigationView);
+        navigationView.setSelectedItemId(R.id.navigation_schedule);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
