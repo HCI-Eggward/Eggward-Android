@@ -13,6 +13,14 @@
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/layout/activity_schedule.xml" value="0.264" />
         <entry key="..\:/Github/Eggward-Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.11145833333333334" />
+        <entry key="app/src/main/res/drawable/white_rounded_box.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/yellow_rounded_box.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_backlog.xml" value="0.29307403564453127" />
+        <entry key="app/src/main/res/layout/activity_schedule.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/alert_dialog_todo.xml" value="0.23641304347826086" />
+        <entry key="app/src/main/res/layout/expandable_list_child.xml" value="0.29209551894873903" />
+        <entry key="app/src/main/res/layout/expandable_list_parent.xml" value="0.16271929824561404" />
+        <entry key="app/src/main/res/layout/todo_item.xml" value="0.25857238769531254" />
       </map>
     </option>
   </component>
