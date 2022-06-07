@@ -3,7 +3,6 @@ package com.example.eggward.Schedule;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -26,6 +26,8 @@ import com.example.eggward.Backlogs.BacklogActivity;
 import com.example.eggward.EggBreeding.EggBreedActivity;
 import com.example.eggward.MyPets.MyPetListActivity;
 import com.example.eggward.R;
+import com.example.eggward.Schedule.domain.ChildItem;
+import com.example.eggward.Schedule.domain.ParentItem;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -37,7 +39,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,15 +50,22 @@ public class ScheduleActivity extends AppCompatActivity {
             "2022-06-05", "2022-06-06", "2022-06-07", "2022-06-08", "2022-06-09", "2022-06-10", "2022-06-11"
     ));
 
+    Integer categoryIndex = 0;
+
     // TODO : Intent -> 로그인 정보 받아오기
-    // TODO : "AI" -> selectedCategory
     String userEmail = "eggward@ewhain.net";
     ArrayList<String> categoryList;
     ArrayList<String> todoContentList;
 
     AlertDialog.Builder builder;
     ImageButton addTodoButton;
-    RecyclerView todoList;
+
+    ExpandableListView listView;
+    ScheduleListAdapter listAdapter;
+    ArrayList<ParentItem> groupList = new ArrayList<>();
+    ArrayList<ArrayList<ChildItem>> childList = new ArrayList<>();
+    ArrayList<ArrayList<ChildItem>> categoriesList = new ArrayList<>();
+
     BottomNavigationView navigationView;
     FloatingActionButton addScheduleButton;
     EditText inputTodo;
@@ -108,7 +116,14 @@ public class ScheduleActivity extends AppCompatActivity {
 
         getTodoCategory();
 
-        todoList = findViewById(R.id.todoRecyclerView);
+        listView = findViewById(R.id.expandableList);
+
+        listAdapter = new ScheduleListAdapter();
+        listAdapter.parentItems = groupList;
+        listAdapter.childItems = childList;
+
+        listView.setAdapter(listAdapter);
+        listView.setGroupIndicator(null);
 
         addTodoButton = findViewById(R.id.addTodoButton);
         addTodoButton.setOnClickListener(view -> {
@@ -131,6 +146,7 @@ public class ScheduleActivity extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     getOriginalTodo();
+                    categoryIndex = position;
                     selectedCategory = categoryList.get(position);
                 }
 
@@ -149,6 +165,11 @@ public class ScheduleActivity extends AppCompatActivity {
                         Map<String, Object> todoArrayMap = new HashMap();
                         todoContentList.add(inputTodo.getText().toString());
                         todoArrayMap.put(date, todoContentList);
+
+                        ChildItem item = new ChildItem(inputTodo.getText().toString());
+                        categoriesList.get(categoryIndex).add(item);
+
+                        setListItems();
 
                         if (inputTodo.getText() != null)
                             database.collection("User").document(userEmail).collection("todoList").document(selectedCategory).set(todoArrayMap, SetOptions.merge());
@@ -202,6 +223,21 @@ public class ScheduleActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+    }
+
+    public void setListItems() {
+        groupList.clear();
+        childList.clear();
+
+        childList.addAll(categoriesList);
+
+        for (int i=0; i<categoryList.size(); i++) {
+            Log.v("here", categoryList.get(i));
+            groupList.add(new ParentItem(categoryList.get(i)));
+        }
+
+        listAdapter.notifyDataSetChanged();
     }
 
     public void getTodoCategory() {
@@ -212,7 +248,42 @@ public class ScheduleActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         categoryList.add(document.getId());
+                        Log.v("here~", document.getId());
                     }
+
+                    for (int i=0; i<categoryList.size(); i++) {
+                        categoriesList.add(new ArrayList<ChildItem>());
+                    }
+
+                    getAllData();
+                }
+            }
+        });
+    }
+
+    public void getAllData() {
+        CollectionReference ref = database.collection("User").document(userEmail).collection("todoList");
+        ref.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.v("selectedcategory", selectedCategory);
+                        Log.v("date", date);
+                        ArrayList tmpList = (ArrayList) document.get(date);
+                        if (tmpList != null) {
+                            for (int i = 0; i < tmpList.size(); i++) {
+                                Log.v("child item", (String) tmpList.get(i));
+                                ChildItem item = new ChildItem((String) tmpList.get(i));
+                                categoriesList.get(categoryIndex).add(item);
+                            }
+                            categoryIndex++;
+                            setListItems();
+                        }
+
+                    }
+                } else {
+                    //
                 }
             }
         });
@@ -227,11 +298,17 @@ public class ScheduleActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         if (document.getId().equals(selectedCategory)) {
+                            Log.v("selectedcategory", selectedCategory);
+                            Log.v("date", date);
                             ArrayList tmpList = (ArrayList) document.get(date);
                             if (tmpList != null) {
                                 for (int i = 0; i < tmpList.size(); i++) {
                                     todoContentList.add((String) tmpList.get(i));
+                                    Log.v("child item", "di");
+                                    ChildItem item = new ChildItem((String) tmpList.get(i));
+                                    categoriesList.get(categoryIndex).add(item);
                                 }
+                                setListItems();
                             }
                         }
                     }
