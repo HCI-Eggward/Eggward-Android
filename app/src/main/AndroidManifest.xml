@@ -30,7 +30,8 @@
             android:exported="true" />
         <activity
             android:name=".Schedule.ScheduleActivity"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".Login.RegisterActivity"
             android:exported="true" />

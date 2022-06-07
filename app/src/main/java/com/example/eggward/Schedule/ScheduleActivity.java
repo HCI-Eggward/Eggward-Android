@@ -194,6 +194,11 @@ public class ScheduleActivity extends AppCompatActivity {
                         Map<String, Object> categoryArrayMap = new HashMap();
                         categoryArrayMap.put("todo", null);
                         database.collection("User").document(userEmail).collection("todoList").document(categoryName).set(categoryArrayMap);
+                        Intent intent = getIntent();
+                        finish(); //현재 액티비티 종료 실시
+                        overridePendingTransition(0, 0); //인텐트 애니메이션 없애기
+                        startActivity(intent); //현재 액티비티 재실행 실시
+                        overridePendingTransition(0, 0); //인텐트 애니메이션 없애기
                     })
                     .setNegativeButton("CANCEL", (dialog, which) -> {
                         // do nothing
@@ -331,6 +336,13 @@ public class ScheduleActivity extends AppCompatActivity {
         for (int i=0; i<7; i++) {
             Button button = buttonList.get(i);
             int finalI = i;
+
+            if (i == calendarIdx)
+                button.setBackgroundResource(R.drawable.yellow_rounded_box);
+            else {
+                button.setBackgroundResource(R.drawable.white_rounded_box);
+            }
+
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -344,18 +356,6 @@ public class ScheduleActivity extends AppCompatActivity {
                     overridePendingTransition(0, 0); //인텐트 애니메이션 없애기
                 }
             });
-        }
-
-        Drawable yellowBg = ResourcesCompat.getDrawable(getResources(), R.drawable.yellow_rounded_box, null);
-        Drawable whiteBg = ResourcesCompat.getDrawable(getResources(), R.drawable.white_rounded_box, null);
-
-        for (int i=0; i<7; i++) {
-            Button button = buttonList.get(i);
-            if (i == calendarIdx)
-                button.setBackground(yellowBg);
-            else {
-                button.setBackground(whiteBg);
-            }
         }
     }
 

@@ -5,7 +5,7 @@
     app:backgroundTint="@null"
     android:shape="rectangle">
     <!-- 배경 색 설정 -->
-    <solid android:color="@color/white" />
+    <solid android:color="#FFF2AD" />
     <!-- 모서리 곡선 설정 -->
     <corners
         android:topLeftRadius="15dp"
