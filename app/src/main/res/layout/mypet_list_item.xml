@@ -22,7 +22,7 @@
         android:id="@+id/image_pet"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        tools:src="@drawable/pet_coala" />
+         />
 
     <TextView
 

@@ -2,7 +2,6 @@ package com.example.eggward.MyPets;
 
 import static android.content.ContentValues.TAG;
 
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,9 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,14 +73,40 @@ public class MyPetListAdapter extends BaseAdapter {
 
             holder.petLevel.setText("Lv."+gridViewItem.getLevel());
             holder.petName.setText(gridViewItem.getName());
+            String name = nameList.get(position);
+            Log.v("이름",name);
+            switch(name){
+                case "동동이":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_rabbit);
+                    break;
+                case "리눅스":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_penguin);
+                    break;
+                case "스테이시":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_mouse);
+                    break;
+                case "알렉스":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_bird);
+                    break;
+                case "김자몽":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_choala);
+                    break;
+                case "에그워드":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_panda);
+                    break;
+                case "알알이":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_fish);
+                    break;
+                case "코코":
+                    holder.imageBtn.setBackgroundResource(R.drawable.pet_monkey);
+            }
 
             holder.imageBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), MyPetDetailActivity.class);
-                    intent.putExtra("name", holder.petName.getText());
-
-                    ((MyPetListActivity) v.getTag()).startActivity(intent);
+                        Intent intent = new Intent(v.getContext(), MyPetDetailActivity.class);
+                        intent.putExtra("name", holder.petName.getText());
+                        ((MyPetListActivity) v.getContext()).startActivity(intent);
                 }
             });
         }
